@@ -1,0 +1,26 @@
+resource:
+    name: ShoppingListItems
+    shortName: shopping-list-items
+
+    includes:
+        - relationshipName: product-offers
+          targetResource: ProductOffers
+          uriTemplate: /product-offers/{productOfferReference}
+          uriVariableMappings:
+              productOfferReference: productOfferReference
+
+    properties:
+        productOfferReference:
+            type: string
+            writable: true
+            readable: true
+            description: 'Product offer reference associated with the shopping list item.'
+            openapiContext:
+                example: 'offer1'
+        merchantReference:
+            type: string
+            writable: false
+            readable: true
+            description: 'Merchant reference associated with the shopping list item.'
+            openapiContext:
+                example: 'MER000001'
