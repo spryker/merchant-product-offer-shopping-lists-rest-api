@@ -14,13 +14,15 @@ resource:
             type: string
             writable: true
             readable: true
-            description: 'Product offer reference associated with the shopping list item.'
+            responseOptional: true
+            description: 'Product offer reference associated with the shopping list item. Answered only for an item added against a product offer; an item added by SKU alone carries none.'
             openapiContext:
                 example: 'offer1'
         merchantReference:
             type: string
             writable: false
             readable: true
-            description: 'Merchant reference associated with the shopping list item.'
+            responseOptional: true
+            description: 'Merchant reference associated with the shopping list item. Answered alongside `productOfferReference`, and absent with it for an item added by SKU alone.'
             openapiContext:
                 example: 'MER000001'
